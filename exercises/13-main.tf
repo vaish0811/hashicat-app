@@ -129,8 +129,8 @@ resource "aws_instance" "hashicat" {
     Environment = "prod"
     Department  = "Hashicat Social"
   }
-  module "s3-bucket" {
-  source              = "cloudposse/s3-bucket/aws"
+ module "s3_bucket" {
+  source              = "app.terraform.io/Genpact_training/s3-bucket/aws"
   version             = "3.1.0"
   s3_object_ownership = "BucketOwnerEnforced"
 }
