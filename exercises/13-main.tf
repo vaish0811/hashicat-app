@@ -129,7 +129,14 @@ resource "aws_instance" "hashicat" {
     Environment = "prod"
     Department  = "Hashicat Social"
   }
+  module "s3-bucket" {
+  source              = "cloudposse/s3-bucket/aws"
+  version             = "3.1.0"
+  s3_object_ownership = "BucketOwnerEnforced"
 }
+}
+
+
 
 # We're using a little trick here so we can run the provisioner without
 # destroying the VM. Do not do this in production.
